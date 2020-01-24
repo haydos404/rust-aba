@@ -1,4 +1,4 @@
-# Rust ABA
+# rust-aba
 
 Generates an Australian Bank Payment File based on the standards set by the Australian Bankers Association.
 
@@ -21,7 +21,7 @@ let mut builder = ApcaBuilder::new(DescriptiveRecord {
 
 Next add the detail records for each transaction are to be processed.
 
-```
+```rs
 let builder = builder
     .add_detail_record(DetailRecord {
         customer_bsb: 333_123,
@@ -45,3 +45,13 @@ format!("{:}", builder)
 ```
 
 To see an example output in terminal run `cargo run` or view the example source code specific here `src/example_credit.rs`.
+
+## Example Output
+
+The example provided above produces the following output to the terminal.
+
+```
+0                 01CBA       MY COMPANY                000000CREDIT      240120
+1333123-333123193122400 500000000465J Peter                         J Development 4935162050-16205017200900 MY_COMPANY      00000000
+7999-999            000000046500000004650000000000                        000001
+```

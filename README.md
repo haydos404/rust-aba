@@ -1,4 +1,4 @@
-# rust-aba
+# Rust ABA
 
 ![](https://github.com/haydos404/rust-aba/workflows/CI/badge.svg)
 

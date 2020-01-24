@@ -1,4 +1,4 @@
-# rust-aba
+# Rust ABA
 
 Generates an Australian Bank Payment File based on the standards set by the Australian Bankers Association.
 

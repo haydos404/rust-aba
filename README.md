@@ -1,5 +1,7 @@
 # rust-aba
 
+![](https://github.com/haydos404/rust-aba/workflows/CI/badge.svg)
+
 Generates an Australian Bank Payment File based on the standards set by the Australian Bankers Association.
 
 For details regarding the standard, see https://www.cemtexaba.com/aba-format/cemtex-aba-file-format-details
@@ -8,7 +10,7 @@ For details regarding the standard, see https://www.cemtexaba.com/aba-format/cem
 
 Create the `ApcaBuilder` with the appropriate options to describe your batch payment.
 
-```rs
+```rust
 let mut builder = ApcaBuilder::new(DescriptiveRecord {
     reel_sequence_number: Option::None,
     financial_institution_code: String::from("CBA"),
@@ -21,7 +23,7 @@ let mut builder = ApcaBuilder::new(DescriptiveRecord {
 
 Next add the detail records for each transaction are to be processed.
 
-```rs
+```rust
 let builder = builder
     .add_detail_record(DetailRecord {
         customer_bsb: 333_123,
@@ -40,7 +42,7 @@ let builder = builder
 
 Finally invoke `to_string` to generate the ABA file.
 
-```rs
+```rust
 format!("{:}", builder)
 ```
 

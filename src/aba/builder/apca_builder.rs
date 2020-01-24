@@ -10,6 +10,7 @@ pub struct ApcaBuilder {
 }
 
 impl ApcaBuilder {
+    #[must_use]
     pub fn new(options: DescriptiveRecord) -> Self {
         Self {
             descriptive_record: options,
